@@ -1,0 +1,13 @@
+﻿  Bullet.cpp
+  Cell.cpp
+  CompareCells.cpp
+  Granade.cpp
+  main.cpp
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Graphics\main.cpp(297,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Graphics\main.cpp(455,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Room.cpp
+  Soldier.cpp
+  Supporter.cpp
+  Team.cpp
+  Generating Code...
+  Graphics.vcxproj -> C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Debug\Graphics.exe
