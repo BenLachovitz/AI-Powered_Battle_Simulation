@@ -1,8 +1,16 @@
 ﻿  Soldier.cpp
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(42,39): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(44,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(44,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(49,16): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(75,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(75,28): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(47,39): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(49,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(49,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(54,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(93,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(93,28): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  SoldierAttack.cpp
+  SoldierSearchRival.cpp
+  SoldierState.cpp
+  Team.cpp
+  main.cpp
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\main.cpp(299,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\main.cpp(470,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Generating Code...
   Graphics.vcxproj -> C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Debug\Graphics.exe

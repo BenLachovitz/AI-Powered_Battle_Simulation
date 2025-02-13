@@ -212,16 +212,16 @@ void PlaceSoldiers() {
 		height = rooms[i * (NUM_ROOMS - 1)]->getHeight();
 		for (int j = 0; j < NUM_OF_SOLDIERS; j++)
 		{
-			while (maze[soldierY][soldierX] != SPACE)
+			while ((maze[soldierY][soldierX] < 10) || (maze[soldierY][soldierX] > 21))
 			{
 				soldierY = rand() % (height - 2) + (roomY - height / 2 + 1);
 				soldierX = rand() % (width - 2) + (roomX - width / 2 + 1);
 			}
-			s1 = new Soldier(soldierX, soldierY);
+			s1 = new Soldier(soldierX, soldierY,maze[soldierY][soldierX],i+2);
 			maze[soldierY][soldierX] = i+2;
 			teams[i]->addSoldier(s1, j);
 		}
-		while (maze[soldierY][soldierX] != SPACE)
+		while ((maze[soldierY][soldierX] < 10) || (maze[soldierY][soldierX] > 21))
 		{
 			soldierY = rand() % (height - 2) + (roomY - height / 2 + 1);
 			soldierX = rand() % (width - 2) + (roomX - width / 2 + 1);
@@ -249,7 +249,7 @@ void PlaceWareHouses()
 		roomY = rooms[roomNumber]->getCenterY();
 		width = rooms[roomNumber]->getWidth();
 		height = rooms[roomNumber]->getHeight();
-		while (maze[y][x] != SPACE)
+		while ((maze[y][x] < 10) || (maze[y][x] > 21))
 		{
 			y = rand() % (height - 2) + (roomY - height / 2 + 1);
 			x = rand() % (width - 2) + (roomX - width / 2 + 1);
@@ -281,7 +281,7 @@ void SetupDungeon()
 				hasOverlap = rooms[j]->Overlap(cx, cy, w, h);
 		} while (hasOverlap); // check the validity of the room
 			
-		rooms[i] = new Room(cx, cy, w, h,maze);
+		rooms[i] = new Room(cx, cy, w, h, maze, i + 10);
 	}
 
 	PlaceSoldiers();
@@ -313,6 +313,18 @@ void ShowDungeon()
 			switch (maze[i][j])
 			{
 			case SPACE:
+			case ROOM1:
+			case ROOM2:
+			case ROOM3:
+			case ROOM4:
+			case ROOM5:
+			case ROOM6:
+			case ROOM7:
+			case ROOM8:
+			case ROOM9:
+			case ROOM10:
+			case ROOM11:
+			case ROOM12:
 				glColor3d(1-s, 1-s, 1-s); // white
 				break;
 			case WALL:

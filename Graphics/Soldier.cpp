@@ -3,7 +3,7 @@
 #include "Cell.h"
 #include "CompareCells.h"
 
-Soldier::Soldier(double sx, double sy)
+Soldier::Soldier(double sx, double sy,int startRoom,int c)
 {
 	x = sx;
 	y = sy;
@@ -13,6 +13,11 @@ Soldier::Soldier(double sx, double sy)
 	pCurrentState = new SoldierSearchRival();
 	pCurrentState->OnEnter(this);
     stepCounts = 0;
+    attacking = false;
+    target = nullptr;
+    roomID = -1;
+    lastStep = startRoom;
+    color = c;
 }
 
 void Soldier::shoot()
@@ -48,12 +53,25 @@ void Soldier::MoveSoldier(int maze[MSZ][MSZ])
 	// Move along path
 	if (pathIndex < soldierPath.size()) {
         int temp = maze[(int)y][(int)x];
-        maze[(int)y][(int)x] = SPACE;
+        maze[(int)y][(int)x] = lastStep;
 		x = soldierPath[pathIndex].first;
 		y = soldierPath[pathIndex].second;
+        lastStep = maze[(int)y][(int)x];
+        if (roomID == SPACE)
+            roomID = -1;
 		pathIndex++;
-        maze[(int)y][(int)x] = temp;
+        maze[(int)y][(int)x] = color;
 	}
+
+    /*if (x == target->getX() && y == target->getY()) {
+
+    }*/
+    int temp1 = roomID;
+    int temp2 = target->getRoomID();
+    //if (maze[(int)y][(int)x] == maze[(int)target->getY()][(int)target->getX()]) {
+    if ((roomID == target->getRoomID()) && roomID != -1 && (maze[(int)y][(int)x] != maze[(int)target->getY()][(int)target->getX()])) {
+        pCurrentState->Transition(this);
+    }
 }
 
 void Soldier::FindPathToRival(int targetX, int targetY, int maze[MSZ][MSZ])

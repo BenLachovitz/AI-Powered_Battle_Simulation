@@ -1,5 +1,8 @@
 #include "Room.h"
 #include "glut.h"
+#include <iostream>
+
+using namespace std;
 
 Room::Room()
 {
@@ -9,7 +12,7 @@ Room::Room()
 	height = 0;
 }
 
-Room::Room(int x, int y, int w, int h, int board[MSZ][MSZ])
+Room::Room(int x, int y, int w, int h, int board[MSZ][MSZ], int roomID)
 {
 	int i, j;
 	centerX = x;
@@ -19,7 +22,8 @@ Room::Room(int x, int y, int w, int h, int board[MSZ][MSZ])
 
 	for (i = centerY - height / 2;i <= centerY + height / 2;i++)
 		for (j = centerX - width / 2;j <= centerX + width / 2;j++)
-			board[i][j] = SPACE;
+			board[i][j] = roomID;
+	cout << roomID << endl;
 
 	int numObstacles = rand() % 9 + 2;
 

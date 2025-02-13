@@ -28,11 +28,15 @@ private:
 	vector<pair<int, int>> soldierPath;
 	int pathIndex = 0;
 	int stepCounts;
+	bool attacking;
+	int roomID;
+	int color;
+	int lastStep;
 
 
 public:
 	Soldier();
-	Soldier(double sx, double sy);
+	Soldier(double sx, double sy, int startRoom, int c);
 	void setX(double sx) { x = sx; }
 	void sety(double sy) { y = sy; }
 	void setHealth(int h) { health = h; }
@@ -61,6 +65,8 @@ public:
 	SoldierState* getCurrentState() { return pCurrentState; }
 	void setTarget(Soldier* s) { target = s; }
 	Soldier* getTarget() { return target; }
-
+	void setAttacking(bool attack) { attacking = attack; }
+	bool getAttacking() { return attacking; }
+	int getRoomID() { return roomID; }
 };
 

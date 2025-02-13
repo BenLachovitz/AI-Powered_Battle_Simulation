@@ -1,4 +1,5 @@
 #include "SoldierSearchRival.h"
+#include "SoldierAttack.h"
 
 void SoldierSearchRival::OnEnter(Soldier* s)
 {
@@ -8,7 +9,7 @@ void SoldierSearchRival::OnEnter(Soldier* s)
 void SoldierSearchRival::Transition(Soldier* s)
 {
 	OnExit(s);
-	//s->setCurrentState(new SoldierSearchRival());
+	s->setCurrentState(new SoldierAttack());
 	s->getCurrentState()->OnEnter(s);
 }
 
