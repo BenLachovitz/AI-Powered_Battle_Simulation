@@ -3,6 +3,13 @@
 #include "Bullet.h"
 #include "Granade.h"
 #include <stdlib.h>
+#include "SoldierState.h"
+#include "vector"
+#include <queue>
+
+using namespace std;
+
+class SoldierState;
 
 class Soldier
 {
@@ -15,6 +22,13 @@ private:
 	bool grenadeThrown = false;
 	Bullet* pb = nullptr;
 	Granade* pg = nullptr;
+	SoldierState* pCurrentState;
+	Soldier* target;
+	bool isMoving;
+	vector<pair<int, int>> soldierPath;
+	int pathIndex = 0;
+	int stepCounts;
+
 
 public:
 	Soldier();
@@ -39,5 +53,14 @@ public:
 	Bullet* getBF() { return pb; }
 	bool getBulletFired() { return bulletFired; }
 	bool getGrenadeThrown() { return grenadeThrown; }
+	void setIsMoving(bool move) { isMoving = move; }
+	bool getIsMoving() { return isMoving; }
+	void MoveSoldier(int maze[MSZ][MSZ]);
+	void FindPathToRival(int targetX, int targetY, int maze[MSZ][MSZ]);
+	void setCurrentState(SoldierState* s) { pCurrentState = s; }
+	SoldierState* getCurrentState() { return pCurrentState; }
+	void setTarget(Soldier* s) { target = s; }
+	Soldier* getTarget() { return target; }
+
 };
 

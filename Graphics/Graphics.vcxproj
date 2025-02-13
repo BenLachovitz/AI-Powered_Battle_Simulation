@@ -125,6 +125,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Soldier.cpp" />
+    <ClCompile Include="SoldierSearchRival.cpp" />
+    <ClCompile Include="SoldierState.cpp" />
     <ClCompile Include="Supporter.cpp" />
     <ClCompile Include="Team.cpp" />
   </ItemGroup>
@@ -137,6 +139,8 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Soldier.h" />
+    <ClInclude Include="SoldierSearchRival.h" />
+    <ClInclude Include="SoldierState.h" />
     <ClInclude Include="Supporter.h" />
     <ClInclude Include="Team.h" />
   </ItemGroup>

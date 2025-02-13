@@ -1,4 +1,3 @@
-
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
@@ -15,7 +14,6 @@
 #include "Supporter.h"
 
 using namespace std;
-
 
 
 const int NUM_ROOMS = 12;
@@ -232,6 +230,10 @@ void PlaceSoldiers() {
 		maze[soldierY][soldierX] = i + 4;
 		teams[i]->assignSupporter(sup);
 	}
+	teams[0]->getSoldiers()[0]->setTarget(teams[1]->getSoldiers()[0]);
+	teams[0]->getSoldiers()[1]->setTarget(teams[0]->getSoldiers()[0]);
+	teams[1]->getSoldiers()[0]->setTarget(teams[0]->getSoldiers()[0]);
+	teams[1]->getSoldiers()[1]->setTarget(teams[1]->getSoldiers()[0]);
 }
 
 void PlaceWareHouses()
@@ -400,6 +402,7 @@ void idle()
 			}
 			if (s->getBulletFired())
 				s->getBF()->move(maze);
+			s->MoveSoldier(maze);
 		}
 	}
 	//pg->expend(maze);

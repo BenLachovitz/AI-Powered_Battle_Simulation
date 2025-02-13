@@ -15,4 +15,7 @@ const int AMMO_WAREHOUSE = 7;
 const double PI = 3.14;
 const double SECURITY_FACTOR = 0.001;
 
+const int dx[] = { 0,0,-1,1 };
+const int dy[] = { -1,1,0,0 };
+
 const int NUM_OF_SOLDIERS = 2;
