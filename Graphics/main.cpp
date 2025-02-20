@@ -29,15 +29,16 @@ bool grenadeThrown = false;
 Bullet* pb=nullptr;
 Granade* pg = nullptr;
 
-//Team* team1;
-//Team* team2;
-
 Team* teams[2];
+
+int a = -2;
+
+pair<int, int> rivalCollition;
 
 int maze[MSZ][MSZ] = {0}; // WALLs
 
-double securityMap[MSZ][MSZ] = {0.0}; // WALLs
 
+double securityMap[MSZ][MSZ] = {0.0}; // WALLs
 
 void RestorePath(Cell* pc)
 {
@@ -191,7 +192,6 @@ void BuildPathBetweenTheRooms()
 		for (j = i + 1;j < NUM_ROOMS;j++)
 		{
 			BuildPath(i, j); // A*
-			cout << "The path from " << i << " to " << j << " has been paved\n";
 		}
 }
 
@@ -210,9 +210,19 @@ void PlaceSoldiers() {
 		roomY = rooms[i * (NUM_ROOMS - 1)]->getCenterY();
 		width = rooms[i * (NUM_ROOMS - 1)]->getWidth();
 		height = rooms[i * (NUM_ROOMS - 1)]->getHeight();
+
+		while (maze[soldierY][soldierX] != SPACE)
+		{
+			soldierY = rand() % (height - 2) + (roomY - height / 2 + 1);
+			soldierX = rand() % (width - 2) + (roomX - width / 2 + 1);
+		}
+		sup = new Supporter(soldierX, soldierY, i + 4);
+		maze[soldierY][soldierX] = i + 4;
+		teams[i]->assignSupporter(sup);
+
 		for (int j = 0; j < NUM_OF_SOLDIERS; j++)
 		{
-			while ((maze[soldierY][soldierX] < 10) || (maze[soldierY][soldierX] > 21))
+			while (maze[soldierY][soldierX] !=SPACE)
 			{
 				soldierY = rand() % (height - 2) + (roomY - height / 2 + 1);
 				soldierX = rand() % (width - 2) + (roomX - width / 2 + 1);
@@ -221,19 +231,18 @@ void PlaceSoldiers() {
 			maze[soldierY][soldierX] = i+2;
 			teams[i]->addSoldier(s1, j);
 		}
-		while ((maze[soldierY][soldierX] < 10) || (maze[soldierY][soldierX] > 21))
-		{
-			soldierY = rand() % (height - 2) + (roomY - height / 2 + 1);
-			soldierX = rand() % (width - 2) + (roomX - width / 2 + 1);
-		}
-		sup = new Supporter(soldierX,soldierY);
-		maze[soldierY][soldierX] = i + 4;
-		teams[i]->assignSupporter(sup);
+
 	}
 	teams[0]->getSoldiers()[0]->setTarget(teams[1]->getSoldiers()[0]);
-	teams[0]->getSoldiers()[1]->setTarget(teams[0]->getSoldiers()[0]);
+	teams[0]->getSoldiers()[1]->setTarget(teams[1]->getSoldiers()[0]);
 	teams[1]->getSoldiers()[0]->setTarget(teams[0]->getSoldiers()[0]);
-	teams[1]->getSoldiers()[1]->setTarget(teams[1]->getSoldiers()[0]);
+	teams[1]->getSoldiers()[1]->setTarget(teams[0]->getSoldiers()[0]);
+
+	teams[0]->getSoldiers()[0]->setTeammate(teams[0]->getSoldiers()[1]);
+	teams[0]->getSoldiers()[1]->setTeammate(teams[0]->getSoldiers()[0]);
+	teams[1]->getSoldiers()[0]->setTeammate(teams[1]->getSoldiers()[1]);
+	teams[1]->getSoldiers()[1]->setTeammate(teams[1]->getSoldiers()[0]);
+
 }
 
 void PlaceWareHouses()
@@ -249,7 +258,7 @@ void PlaceWareHouses()
 		roomY = rooms[roomNumber]->getCenterY();
 		width = rooms[roomNumber]->getWidth();
 		height = rooms[roomNumber]->getHeight();
-		while ((maze[y][x] < 10) || (maze[y][x] > 21))
+		while (maze[y][x] != SPACE)
 		{
 			y = rand() % (height - 2) + (roomY - height / 2 + 1);
 			x = rand() % (width - 2) + (roomX - width / 2 + 1);
@@ -281,7 +290,7 @@ void SetupDungeon()
 				hasOverlap = rooms[j]->Overlap(cx, cy, w, h);
 		} while (hasOverlap); // check the validity of the room
 			
-		rooms[i] = new Room(cx, cy, w, h, maze, i + 10);
+		rooms[i] = new Room(cx, cy, w, h, maze);
 	}
 
 	PlaceSoldiers();
@@ -313,18 +322,18 @@ void ShowDungeon()
 			switch (maze[i][j])
 			{
 			case SPACE:
-			case ROOM1:
-			case ROOM2:
-			case ROOM3:
-			case ROOM4:
-			case ROOM5:
-			case ROOM6:
-			case ROOM7:
-			case ROOM8:
-			case ROOM9:
-			case ROOM10:
-			case ROOM11:
-			case ROOM12:
+			//case ROOM1:
+			//case ROOM2:
+			//case ROOM3:
+			//case ROOM4:
+			//case ROOM5:
+			//case ROOM6:
+			//case ROOM7:
+			//case ROOM8:
+			//case ROOM9:
+			//case ROOM10:
+			//case ROOM11:
+			//case ROOM12:
 				glColor3d(1-s, 1-s, 1-s); // white
 				break;
 			case WALL:
@@ -364,8 +373,41 @@ void generateSecurityMap() {
 
 	int i;
 	for (i = 0; i < numSimulations; i++) {
-		Granade* g = new Granade(rand() % MSZ, rand() % MSZ, (rand() % 360) * PI / 180);
+		Granade* g = new Granade(rand() % MSZ, rand() % MSZ, (rand() % 360) * PI / 180,-1);
 		g->SimulateExplosion(maze,securityMap);
+	}
+}
+
+void FindRoomID(Soldier* s)
+{
+	int startX, startY, endX, endY;
+	int soldierX, soldierY;
+	soldierX = (int)s->getX();
+	soldierY = (int)s->getY();
+	Room* r = nullptr;
+	for (int i = 0; i < NUM_ROOMS; i++)
+	{
+		r = rooms[i];
+		startX = r->getCenterX() - (r->getWidth() / 2);
+		endX = r->getCenterX() + (r->getWidth() / 2);
+		startY = r->getCenterY() - (r->getHeight() / 2);
+		endY = r->getCenterY() + (r->getHeight() / 2);
+		if ((soldierX >= startX) && (soldierX <= endX) && (soldierY >= startY) && (soldierY <= endY))
+		{
+			s->setRoomID(i);
+			return;
+		}
+	}
+	s->setRoomID(-1);
+}
+
+Soldier* findSoldier(int teamNumber, pair<int, int> collition)
+{
+	for (int i = 0; i < 2; i++)
+	{
+		if (teams[teamNumber]->getSoldier(i)->getX() == collition.first)
+			if (teams[teamNumber]->getSoldier(i)->getY() == collition.second)
+				return teams[teamNumber]->getSoldier(i);
 	}
 }
 
@@ -393,29 +435,61 @@ void display()
 	glutSwapBuffers(); // show all
 }
 
+
 void idle() 
 {
-	//if (bulletFired)
-	//	pb->move(maze);
 
 	for (int i = 0; i < 2; i++)
 	{
 		for (int j = 0; j < 2; j++)
 		{
 			Soldier* s = teams[i]->getSoldier(j);
+			FindRoomID(s);
 			if (s->getGrenadeThrown())
 			{
 				if (s->getGT()->getIsMoving())
 				{
 					s->getGT()->move(maze);
 				}
-				else if(s->getGT()->getIsExploding())
-					s->getGT()->expend(maze);
+				else if (s->getGT()->getIsExploding()) {
+					vector<pair<int, int>> res = s->getGT()->expend(maze);
+					if (!res.empty()) {
+						for (int k = 0; k < res.size(); k++) {
+							Soldier* rival = findSoldier((i + 1) % 2, res[k]);
+							if (rival->getHealth() < 15)
+								rival->setHealth(0);
+							else
+								rival->setHealth(rival->getHealth() - 15);
+							cout << (i + 1) % 2 << "," << j << "=" << rival->getHealth() << endl;
+						}
+					}
+				}
 			}
 			if (s->getBulletFired())
-				s->getBF()->move(maze);
+			{
+				
+				rivalCollition = s->getBF()->move(maze);
+				if (rivalCollition.first != -1)
+				{
+					Soldier* rival = findSoldier((i + 1) % 2, rivalCollition);
+					if (rival->getHealth() < 10)
+						rival->setHealth(0);
+					else
+						rival->setHealth(rival->getHealth() - 10);
+					cout << (i + 1) % 2 << "," << j << "=" << rival->getHealth() << endl;
+				}
+			}
+			
 			s->MoveSoldier(maze);
+			s->fight(maze);
+			if(j==0)
+				a = rand() % 12;
+			if (a >= 0)
+				s->survive(rooms[a]->getCenterX(), rooms[a]->getCenterY(), maze);
+			
 		}
+		teams[i]->getSupporter()->MoveSupporter(maze);
+		
 	}
 	//pg->expend(maze);
 

@@ -3,7 +3,7 @@
 #include "glut.h"
 
 
-Granade::Granade(double r, double c, double angle)
+Granade::Granade(double r, double c, double angle, int rival)
 {
 	x = c;
 	y = r;
@@ -14,10 +14,11 @@ Granade::Granade(double r, double c, double angle)
 	isMoving = false;
 	exploding = false;
 	movingDelay = 0;
+	rivalColor = rival;
 	int i;
 	double alpha = 2 * PI / NUM_BULLET;
 	for (i = 0; i < NUM_BULLET; i++) {
-		bullets[i] = new Bullet(c, r, i * alpha,0,0,0);
+		bullets[i] = new Bullet(c, r, i * alpha, 0, 0, 0, rivalColor);
 	}
 }
 
@@ -45,11 +46,17 @@ void Granade::explode()
 	exploding = true;
 }
 
-void Granade::expend(int maze[MSZ][MSZ])
+vector<pair<int,int>> Granade::expend(int maze[MSZ][MSZ])
 {
+	pair<int, int> temp;
+	vector<pair<int, int>> res;
 	for (int i = 0; i < NUM_BULLET; i++) {
-		bullets[i]->move(maze);
+		temp = bullets[i]->move(maze);
+		if (temp.first != -1) {
+			res.push_back(temp);
+		}
 	}
+	return res;
 }
 
 void Granade::show()

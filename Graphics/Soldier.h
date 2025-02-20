@@ -9,6 +9,7 @@
 
 using namespace std;
 
+class Supporter;
 class SoldierState;
 
 class Soldier
@@ -24,6 +25,8 @@ private:
 	Granade* pg = nullptr;
 	SoldierState* pCurrentState;
 	Soldier* target;
+	Soldier* teammate;
+	Supporter* teamSupporter;
 	bool isMoving;
 	vector<pair<int, int>> soldierPath;
 	int pathIndex = 0;
@@ -32,7 +35,11 @@ private:
 	int roomID;
 	int color;
 	int lastStep;
-
+	int backRoomX;
+	int backRoomY;
+	static const int PATH_DETECTION_RANGE = 15; // Detection radius for path crossing
+	bool isRetreating;
+	bool surviving;
 
 public:
 	Soldier();
@@ -65,8 +72,26 @@ public:
 	SoldierState* getCurrentState() { return pCurrentState; }
 	void setTarget(Soldier* s) { target = s; }
 	Soldier* getTarget() { return target; }
+	Soldier* getTeammate() { return teammate; }
+	void setSupporter(Supporter* s) { teamSupporter = s; }
+	void setTeammate(Soldier* s) { teammate = s; }
 	void setAttacking(bool attack) { attacking = attack; }
 	bool getAttacking() { return attacking; }
 	int getRoomID() { return roomID; }
+	void setRoomID(int r) { roomID = r; }
+	void nearbyRival();
+	int getColor() { return color; }
+	bool isInPath() const { return roomID == -1; }
+	bool isPathCrossing(Soldier* other) const;
+	void handlePathCrossing(Soldier* other, int maze[MSZ][MSZ]);
+	void startRetreat();
+	void fight(int maze[MSZ][MSZ]);
+	void setStepCounts(int c) { stepCounts = c; }
+	double angleCalculation();
+	void setSurviving(bool s) {surviving = s;}
+	bool getSurviving() {return surviving;}
+	bool survive(int roomX, int roomY, int maze[MSZ][MSZ]);
+	void clearPath() { soldierPath.clear(); pathIndex = 0; }
+	bool needToSurvive();
 };
 

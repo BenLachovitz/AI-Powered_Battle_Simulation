@@ -15,14 +15,15 @@ private:
 	Bullet* bullets[NUM_BULLET];
 	bool exploding;
 	int movingDelay;
+	int rivalColor;
 
 public:
-	Granade(double r, double c, double angle);
+	Granade(double r, double c, double angle, int rival);
 	void setX(double xx) { x = xx; }
 	void setY(double yy) { y = yy; }
 	void move(int maze[MSZ][MSZ]);
 	void explode();
-	void expend(int maze[MSZ][MSZ]);
+	vector<pair<int,int>> expend(int maze[MSZ][MSZ]);
 	void show();
 	void SimulateExplosion(int maze[MSZ][MSZ], double sm[MSZ][MSZ]);
 	bool getIsMoving() { return isMoving; }

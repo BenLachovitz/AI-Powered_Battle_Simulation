@@ -7,7 +7,7 @@ private:
 	int width, height;
 public:
 	Room();
-	Room(int x, int y, int w, int h, int board[MSZ][MSZ], int roomID);
+	Room(int x, int y, int w, int h, int board[MSZ][MSZ]);
 //	void show(int board[MSZ][MSZ]);
 	void setCenter(int x, int y) { centerX = x; centerY = y; }
 	void setWidth(int w) { width = w; }

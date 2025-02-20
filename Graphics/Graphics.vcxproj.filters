@@ -51,6 +51,15 @@
     <ClCompile Include="SoldierAttack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SoldierSurvive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SupporterState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SupporterHelpSoldier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cell.h">
@@ -90,6 +99,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SoldierAttack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoldierSurvive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SupporterState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SupporterHelpSoldier.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
