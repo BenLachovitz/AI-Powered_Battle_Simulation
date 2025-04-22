@@ -18,4 +18,6 @@ void SoldierSurvive::Transition(Soldier* s)
 void SoldierSurvive::OnExit(Soldier* s)
 {
 	s->setSurviving(false);
+	s->setRoomToRun(-1);
+
 }

@@ -3,6 +3,7 @@
 
 
 const int NUM_BULLET = 20;
+const int NUM_BULLET_SM = 40;
 
 class Granade
 {
@@ -13,6 +14,7 @@ private:
 	double speed;
 	bool isMoving;
 	Bullet* bullets[NUM_BULLET];
+	Bullet* bullets_sm[NUM_BULLET_SM];
 	bool exploding;
 	int movingDelay;
 	int rivalColor;

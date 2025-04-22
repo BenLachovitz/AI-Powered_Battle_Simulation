@@ -4,8 +4,8 @@
 void SoldierSearchRival::OnEnter(Soldier* s)
 {
 	s->setIsMoving(true);
-	s->setStepCounts(0);
 	s->clearPath();
+	s->setStepCounts(0);
 }
 
 void SoldierSearchRival::Transition(Soldier* s)
@@ -17,5 +17,4 @@ void SoldierSearchRival::Transition(Soldier* s)
 
 void SoldierSearchRival::OnExit(Soldier* s)
 {
-	s->setIsMoving(false);
 }

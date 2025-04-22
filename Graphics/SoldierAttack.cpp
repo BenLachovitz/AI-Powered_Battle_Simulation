@@ -5,14 +5,13 @@
 void SoldierAttack::OnEnter(Soldier* s)
 {
 	s->setAttacking(true);
-	s->setStepCounts(0);
+	s->clearPath();
 }
 
 void SoldierAttack::Transition(Soldier* s)
 {
 	
-	OnExit(s);
-	if (s->needToSurvive()||s->getTeammate()->needToSurvive())
+	if (s->needToSurvive() || (!s->getTeammate()->getIsDied() && s->getTeammate()->needToSurvive() && s->getAttacking()))
 	{
 		s->setCurrentState(new SoldierSurvive());
 		s->getCurrentState()->OnEnter(s);
@@ -21,7 +20,7 @@ void SoldierAttack::Transition(Soldier* s)
 		s->setCurrentState(new SoldierSearchRival());
 		s->getCurrentState()->OnEnter(s);
 	}
-	
+	OnExit(s);
 }
 
 void SoldierAttack::OnExit(Soldier* s)

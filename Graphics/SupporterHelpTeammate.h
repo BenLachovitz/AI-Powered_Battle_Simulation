@@ -1,7 +1,6 @@
 #pragma once
 #include "SupporterState.h"
-
-class SupporterHelpSoldier :
+class SupporterHelpTeammate :
     public SupporterState
 {
 	void OnEnter(Supporter* s);

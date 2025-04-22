@@ -23,7 +23,6 @@ Room::Room(int x, int y, int w, int h, int board[MSZ][MSZ])
 	for (i = centerY - height / 2;i <= centerY + height / 2;i++)
 		for (j = centerX - width / 2;j <= centerX + width / 2;j++)
 			board[i][j] = SPACE;
-	//cout << roomID << endl;
 
 	int numObstacles = rand() % 9 + 2;
 

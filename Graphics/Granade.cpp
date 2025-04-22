@@ -20,6 +20,11 @@ Granade::Granade(double r, double c, double angle, int rival)
 	for (i = 0; i < NUM_BULLET; i++) {
 		bullets[i] = new Bullet(c, r, i * alpha, 0, 0, 0, rivalColor);
 	}
+
+	alpha = 2 * PI / NUM_BULLET_SM;
+	for (i = 0; i < NUM_BULLET_SM; i++) {
+		bullets_sm[i] = new Bullet(c, r, i * alpha, 0, 0, 0, rivalColor);
+	}
 }
 
 void Granade::move(int maze[MSZ][MSZ])
@@ -81,7 +86,7 @@ void Granade::SimulateExplosion(int maze[MSZ][MSZ], double sm[MSZ][MSZ])
 {
 	int i;
 
-	for (i = 0; i < NUM_BULLET; i++) {
-		bullets[i]->SimulateExplosion(maze, sm);
+	for (i = 0; i < NUM_BULLET_SM; i++) {
+		bullets_sm[i]->SimulateExplosion(maze, sm);
 	}
 }

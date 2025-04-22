@@ -1,5 +1,6 @@
 #pragma once
 const int MSZ = 100;
+const int NUM_ROOMS = 12;
 
 const int WIDTH = 700;
 const int HEIGHT = 700;
@@ -13,19 +14,12 @@ const int TEAM_2_SUPPORTER = 5;
 const int MEDICAL_WAREHOUSE = 6;
 const int AMMO_WAREHOUSE = 7;
 
-//const int ROOM1 = 10;
-//const int ROOM2 = 11;
-//const int ROOM3 = 12;
-//const int ROOM4 = 13;
-//const int ROOM5 = 14;
-//const int ROOM6 = 15;
-//const int ROOM7 = 16;
-//const int ROOM8 = 17;
-//const int ROOM9 = 18;
-//const int ROOM10 = 19;
-//const int ROOM11 = 20;
-//const int ROOM12 = 21;
+const int MAX_AMMO = 200;
+const int MAX_GRANADE = 200;
+const int MAX_MED = 200;
 
+const int BULLET_DAMAGE = 5;
+const int GRANADE_DAMAGE = 12;
 
 const double PI = 3.14;
 const double SECURITY_FACTOR = 0.001;

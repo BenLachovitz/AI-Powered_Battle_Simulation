@@ -10,6 +10,7 @@ C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphi
 C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\SoldierState.cpp;C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Debug\SoldierState.obj
 C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\SoldierSurvive.cpp;C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Debug\SoldierSurvive.obj
 C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp;C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Debug\Supporter.obj
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\SupporterHelpSoldier.cpp;C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Debug\SupporterHelpSoldier.obj
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\SupporterFollowState.cpp;C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Debug\SupporterFollowState.obj
+C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\SupporterHelpTeammate.cpp;C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Debug\SupporterHelpTeammate.obj
 C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\SupporterState.cpp;C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Debug\SupporterState.obj
 C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Team.cpp;C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Debug\Team.obj

@@ -130,7 +130,8 @@
     <ClCompile Include="SoldierState.cpp" />
     <ClCompile Include="SoldierSurvive.cpp" />
     <ClCompile Include="Supporter.cpp" />
-    <ClCompile Include="SupporterHelpSoldier.cpp" />
+    <ClCompile Include="SupporterFollowState.cpp" />
+    <ClCompile Include="SupporterHelpTeammate.cpp" />
     <ClCompile Include="SupporterState.cpp" />
     <ClCompile Include="Team.cpp" />
   </ItemGroup>
@@ -148,7 +149,8 @@
     <ClInclude Include="SoldierState.h" />
     <ClInclude Include="SoldierSurvive.h" />
     <ClInclude Include="Supporter.h" />
-    <ClInclude Include="SupporterHelpSoldier.h" />
+    <ClInclude Include="SupporterFollowState.h" />
+    <ClInclude Include="SupporterHelpTeammate.h" />
     <ClInclude Include="SupporterState.h" />
     <ClInclude Include="Team.h" />
   </ItemGroup>

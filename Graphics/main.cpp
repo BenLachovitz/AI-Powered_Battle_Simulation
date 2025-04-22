@@ -12,11 +12,9 @@
 #include "Team.h"
 #include "Soldier.h"
 #include "Supporter.h"
+#include <set>
 
 using namespace std;
-
-
-const int NUM_ROOMS = 12;
 
 const double WALL_COST = 5;
 const double SPACE_COST = 1;
@@ -31,24 +29,40 @@ Granade* pg = nullptr;
 
 Team* teams[2];
 
-int a = -2;
-
-pair<int, int> rivalCollition;
+pair<double, double> rivalCollition;
 
 int maze[MSZ][MSZ] = {0}; // WALLs
 
-
 double securityMap[MSZ][MSZ] = {0.0}; // WALLs
+
+int team1DeathCount = 0;
+int team2DeathCount = 0;
+
 
 void RestorePath(Cell* pc)
 {
 	int r, c;
+	int backup_r = -1, backup_c = -1;
 	while (pc != nullptr)
 	{
 		r = pc->getRow();
 		c = pc->getCol();
-		if (maze[r][c] == WALL)
+		if (maze[r][c] == WALL || pc->getParent() == nullptr) {
 			maze[r][c] = SPACE;
+			if (backup_r != -1 && backup_c != -1) {
+				if (c != backup_c)
+				{
+					maze[r + 1][c] = SPACE;
+					maze[r + 1][backup_c] = SPACE;
+				}
+				if (r != backup_r)
+				{
+					maze[r][c + 1] = SPACE;
+					maze[backup_r][c + 1] = SPACE;
+				}
+			}
+		}
+		backup_r = r, backup_c = c;
 		pc = pc->getParent();
 	}
 }
@@ -101,7 +115,6 @@ void AddNeighbor(int r, int c, Cell* pCurrent,
 				}
 				if (pq.empty()) // ERROR!
 				{
-					cout << "PQ is empty\n";
 					exit(2);
 				}
 				else // we have found the neighbor cell in PQ
@@ -118,8 +131,6 @@ void AddNeighbor(int r, int c, Cell* pCurrent,
 			}
 		}
 	}
-
-
 }
 
 // run A* from room at index1 to room at index2
@@ -196,14 +207,14 @@ void BuildPathBetweenTheRooms()
 }
 
 void PlaceSoldiers() {
-	int roomX =0, roomY = 0;
+	int roomX = 0, roomY = 0;
 	int width = 0, height = 0;
 	int soldierX = 0, soldierY = 0;
 	Team* temp = nullptr;
 	Soldier* s1 = nullptr;
 	Supporter* sup = nullptr;
 	//create 2 soldiers in each team
-	for (int i = 0; i < (sizeof(teams)/sizeof(Team*)); i++)
+	for (int i = 0; i < (sizeof(teams) / sizeof(Team*)); i++)
 	{
 		teams[i] = new Team();
 		roomX = rooms[i * (NUM_ROOMS - 1)]->getCenterX();
@@ -216,33 +227,35 @@ void PlaceSoldiers() {
 			soldierY = rand() % (height - 2) + (roomY - height / 2 + 1);
 			soldierX = rand() % (width - 2) + (roomX - width / 2 + 1);
 		}
+
 		sup = new Supporter(soldierX, soldierY, i + 4);
 		maze[soldierY][soldierX] = i + 4;
 		teams[i]->assignSupporter(sup);
 
 		for (int j = 0; j < NUM_OF_SOLDIERS; j++)
 		{
-			while (maze[soldierY][soldierX] !=SPACE)
+			while (maze[soldierY][soldierX] != SPACE)
 			{
 				soldierY = rand() % (height - 2) + (roomY - height / 2 + 1);
 				soldierX = rand() % (width - 2) + (roomX - width / 2 + 1);
 			}
-			s1 = new Soldier(soldierX, soldierY,maze[soldierY][soldierX],i+2);
-			maze[soldierY][soldierX] = i+2;
+			s1 = new Soldier(soldierX, soldierY, maze[soldierY][soldierX], i + 2);
+			maze[soldierY][soldierX] = i + 2;
 			teams[i]->addSoldier(s1, j);
+			s1->setSupporter(sup);
 		}
 
+		sup->setTeammates(teams[i]->getSoldiers());
+
 	}
+
 	teams[0]->getSoldiers()[0]->setTarget(teams[1]->getSoldiers()[0]);
 	teams[0]->getSoldiers()[1]->setTarget(teams[1]->getSoldiers()[0]);
 	teams[1]->getSoldiers()[0]->setTarget(teams[0]->getSoldiers()[0]);
 	teams[1]->getSoldiers()[1]->setTarget(teams[0]->getSoldiers()[0]);
 
-	teams[0]->getSoldiers()[0]->setTeammate(teams[0]->getSoldiers()[1]);
-	teams[0]->getSoldiers()[1]->setTeammate(teams[0]->getSoldiers()[0]);
-	teams[1]->getSoldiers()[0]->setTeammate(teams[1]->getSoldiers()[1]);
-	teams[1]->getSoldiers()[1]->setTeammate(teams[1]->getSoldiers()[0]);
-
+	teams[0]->setTeamates();
+	teams[1]->setTeamates();
 }
 
 void PlaceWareHouses()
@@ -322,19 +335,7 @@ void ShowDungeon()
 			switch (maze[i][j])
 			{
 			case SPACE:
-			//case ROOM1:
-			//case ROOM2:
-			//case ROOM3:
-			//case ROOM4:
-			//case ROOM5:
-			//case ROOM6:
-			//case ROOM7:
-			//case ROOM8:
-			//case ROOM9:
-			//case ROOM10:
-			//case ROOM11:
-			//case ROOM12:
-				glColor3d(1-s, 1-s, 1-s); // white
+				glColor3d(1, 1, 1); // white
 				break;
 			case WALL:
 				glColor3d(0.3, 0.3, 0.4); // dark gray
@@ -401,6 +402,12 @@ void FindRoomID(Soldier* s)
 	s->setRoomID(-1);
 }
 
+void reassignTargets(int i, int j) {
+	Soldier** soldiers = teams[(i + 1) % 2]->getSoldiers();
+	soldiers[0]->setTarget(teams[i]->getSoldier((j + 1) % 2));
+	soldiers[1]->setTarget(teams[i]->getSoldier((j + 1) % 2));
+}
+
 Soldier* findSoldier(int teamNumber, pair<int, int> collition)
 {
 	for (int i = 0; i < 2; i++)
@@ -411,41 +418,84 @@ Soldier* findSoldier(int teamNumber, pair<int, int> collition)
 	}
 }
 
+void DrawWinnerText() {
+	string gameOverText = "GAME OVER!";
+
+	//background 
+	float textWidth = gameOverText.length()*2.75;
+	float textHeight = 13.5;
+	glColor3f(0, 0, 0);
+	glBegin(GL_QUADS);
+	glVertex2f(MSZ / 2 - 10, MSZ / 2 + 5);
+	glVertex2f(MSZ / 2 - 10+textWidth, MSZ / 2 + 5);
+	glVertex2f(MSZ / 2 - 10 + textWidth, MSZ / 2 + 5 - textHeight);
+	glVertex2f(MSZ / 2 - 10, MSZ / 2 + 5 - textHeight);
+	glEnd();
+	//
+
+	string winnerTeam = "";
+	if (team1DeathCount >= 2) {
+		winnerTeam = "BLUE TEAM WINS";
+		glColor3d(0, 0, 1);
+	}
+	else {
+		winnerTeam = "RED TEAM WINS";
+		glColor3d(1, 0, 0);
+	}
+
+	glRasterPos2f(MSZ / 2 - 5, MSZ / 2);
+	for (char c : gameOverText) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+	}
+
+	glRasterPos2f(MSZ / 2 - 7, MSZ / 2 - 5);
+	for (char c : winnerTeam) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+	}
+}
+
 void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT); // clean frame buffer
 
 	ShowDungeon();
-	//if (pb != nullptr)
-	//	pb->show();
-	//if (pg != nullptr)
-	//	pg->show();
-	for (int i = 0; i < 2; i++)
-	{
-		for (int j = 0; j < 2; j++)
+	if (team1DeathCount < 2 && team2DeathCount < 2) {
+		for (int i = 0; i < 2; i++)
 		{
-			Soldier* s = teams[i]->getSoldier(j);
-			if (s->getGT() != nullptr)
-				s->getGT()->show();
-			if (s->getBF() != nullptr)
-				s->getBF()->show();
+			for (int j = 0; j < 2; j++)
+			{
+				Soldier* s = teams[i]->getSoldier(j);
+				if (s->getGT() != nullptr)
+					s->getGT()->show();
+				if (s->getBF() != nullptr)
+					s->getBF()->show();
+			}
 		}
 	}
+	else
+		DrawWinnerText();
 
 	glutSwapBuffers(); // show all
 }
 
+void clearSecurityMap()
+{
+	for (int i = 0; i < MSZ; i++)
+		for (int j = 0; j < MSZ; j++)
+			securityMap[j][i] = 0.0;
+}
 
 void idle() 
 {
-
-	for (int i = 0; i < 2; i++)
+	int roomIDToGo = -1;
+	for (int i = 0; i < 2 && team1DeathCount < 2 && team2DeathCount < 2; i++)
 	{
 		for (int j = 0; j < 2; j++)
 		{
 			Soldier* s = teams[i]->getSoldier(j);
+
 			FindRoomID(s);
-			if (s->getGrenadeThrown())
+			if (!s->getIsDied() && s->getGrenadeThrown())
 			{
 				if (s->getGT()->getIsMoving())
 				{
@@ -454,93 +504,62 @@ void idle()
 				else if (s->getGT()->getIsExploding()) {
 					vector<pair<int, int>> res = s->getGT()->expend(maze);
 					if (!res.empty()) {
+						set<Soldier*> hitRivals;
+						// Check all pellet collisions
 						for (int k = 0; k < res.size(); k++) {
 							Soldier* rival = findSoldier((i + 1) % 2, res[k]);
-							if (rival->getHealth() < 15)
-								rival->setHealth(0);
-							else
-								rival->setHealth(rival->getHealth() - 15);
-							cout << (i + 1) % 2 << "," << j << "=" << rival->getHealth() << endl;
+							if (rival != nullptr) {
+								// Add rival to the hit set
+								hitRivals.insert(rival);
+							}
+						}
+
+						// Apply damage once to each unique hit rival
+						for (Soldier* rival : hitRivals) {
+							rival->setHealth(rival->getHealth() - GRANADE_DAMAGE);
 						}
 					}
 				}
 			}
-			if (s->getBulletFired())
-			{
-				
+			if (!s->getIsDied() && s->getBulletFired())
+			{	
 				rivalCollition = s->getBF()->move(maze);
 				if (rivalCollition.first != -1)
 				{
 					Soldier* rival = findSoldier((i + 1) % 2, rivalCollition);
-					if (rival->getHealth() < 10)
-						rival->setHealth(0);
-					else
-						rival->setHealth(rival->getHealth() - 10);
-					cout << (i + 1) % 2 << "," << j << "=" << rival->getHealth() << endl;
+					rival->setHealth(rival->getHealth() - BULLET_DAMAGE);
 				}
 			}
-			
-			s->MoveSoldier(maze);
-			s->fight(maze);
-			if(j==0)
-				a = rand() % 12;
-			if (a >= 0)
-				s->survive(rooms[a]->getCenterX(), rooms[a]->getCenterY(), maze);
-			
-		}
-		teams[i]->getSupporter()->MoveSupporter(maze);
 		
+			s->MoveSoldier(maze);
+			clearSecurityMap();
+			if(s->getRoomID()!=-1)
+				s->fight(maze, securityMap, rooms[s->getRoomID()]);
+
+			//kill soldier
+			if (!s->getIsDied() && s->isSoldierDead(maze)) {
+				(i == 0) ? team1DeathCount++ : team2DeathCount++;
+				if (team1DeathCount < 2 && team2DeathCount < 2)
+					reassignTargets(i, j);
+				break;
+			}
+		}
+		teams[i]->survive(rooms, maze);
+		roomIDToGo = rand() % NUM_ROOMS;
+		try {
+			teams[i]->getSupporter()->followTeammates(rooms[roomIDToGo]->getCenterX(), rooms[roomIDToGo]->getCenterY(), maze);
+			teams[i]->getSupporter()->moveToHelpTarget(maze);
+		}
+		catch (const out_of_range& e) {
+			cerr << "Out of range error: " << e.what() << std::endl;
+			// Handle the error or debug here
+			return; // Or other fallback logic
+		}	
 	}
-	//pg->expend(maze);
 
 	glutPostRedisplay(); // indirect call to display
 }
 
-void menu(int choice)
-{
-	cout << choice;
-	switch (choice)
-	{
-	case 1: // fire bullet
-
-		for (int i = 0; i < 2; i++)
-		{
-			for (int j = 0; j < 2; j++)
-			{
-				Soldier* s = teams[i]->getSoldier(j);
-				s->shoot();
-			}
-		}
-
-		//bulletFired = true;
-		//pb->setIsMoving(true);
-		break;
-	case 2: // throw grenade
-		for (int i = 0; i < 2; i++)
-		{
-			for (int j = 0; j < 2; j++)
-			{
-				Soldier* s = teams[i]->getSoldier(j);
-				s->ThrowGrenade();
-			}
-		}
-		break;
-	case 3:
-		generateSecurityMap();
-		break;
-	}
-}
-void mouse(int button, int state, int x, int y)
-{
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
-	{
-		//pb = new Bullet(MSZ*x/(double)WIDTH,
-		//	MSZ* (HEIGHT - y) / (double)HEIGHT, (rand() % 360)* PI / 180);
-
-		//pg = new Granade(MSZ * (HEIGHT - y) / (double)HEIGHT, MSZ * x / (double)WIDTH);
-	}
-
-}
 void main(int argc, char* argv[]) 
 {
 	glutInit(&argc, argv);
@@ -548,22 +567,12 @@ void main(int argc, char* argv[])
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 	glutInitWindowSize(WIDTH, HEIGHT);
 	glutInitWindowPosition(600, 20);
-	glutCreateWindow("BFS");
+	glutCreateWindow("Dungen AI War");
 
 	// display is a refresh function
 	glutDisplayFunc(display);
 	// idle is a update function
 	glutIdleFunc(idle);
-	
-	glutMouseFunc(mouse);
-
-	// menu
-	glutCreateMenu(menu);
-	glutAddMenuEntry("Fire bullet", 1);
-	glutAddMenuEntry("Throw Grenade", 2);
-	glutAddMenuEntry("Generate security map", 3);
-	glutAttachMenu(GLUT_RIGHT_BUTTON);
-
 
 	init();
 

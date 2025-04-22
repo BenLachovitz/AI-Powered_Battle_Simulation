@@ -57,7 +57,10 @@
     <ClCompile Include="SupporterState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SupporterHelpSoldier.cpp">
+    <ClCompile Include="SupporterFollowState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SupporterHelpTeammate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,7 +110,10 @@
     <ClInclude Include="SupporterState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SupporterHelpSoldier.h">
+    <ClInclude Include="SupporterFollowState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SupporterHelpTeammate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
