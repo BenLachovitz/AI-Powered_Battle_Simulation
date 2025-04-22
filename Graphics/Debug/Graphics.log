@@ -21,11 +21,11 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.3380
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(398,39): warning C4244:         [
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(398,39): warning C4244:             _Ty2=int
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(398,39): warning C4244:         ]
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\main.cpp(321,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\main.cpp(425,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\main.cpp(509,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\main.cpp(563,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\main.cpp(321,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\main.cpp(425,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\main.cpp(509,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\main.cpp(563,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(269,16): warning C4244: 'initializing': conversion from 'const _Ty1' to '_Ty1', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(269,16): warning C4244:         with
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(269,16): warning C4244:         [
@@ -46,68 +46,68 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.3380
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(269,38): warning C4244:         ]
   Room.cpp
   Soldier.cpp
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(84,42): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(98,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(133,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(134,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(135,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(136,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(160,21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(160,49): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(160,75): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(160,101): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(170,23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(171,23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(180,24): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(181,24): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(183,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(184,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(223,42): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(325,43): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(352,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(353,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(402,90): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(405,75): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(405,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(407,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(407,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(413,48): warning C4018: '>': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(441,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(453,59): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(493,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(494,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(508,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(508,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(536,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Soldier.cpp(536,28): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(84,42): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(98,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(133,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(134,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(135,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(136,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(160,21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(160,49): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(160,75): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(160,101): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(170,23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(171,23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(180,24): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(181,24): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(183,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(184,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(223,42): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(325,43): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(352,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(353,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(402,90): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(405,75): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(405,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(407,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(407,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(413,48): warning C4018: '>': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(441,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(453,59): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(493,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(494,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(508,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(508,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(536,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Soldier.cpp(536,28): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   SoldierAttack.cpp
   SoldierSearchRival.cpp
   SoldierState.cpp
   SoldierSurvive.cpp
   Supporter.cpp
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(66,45): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(75,35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(76,35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(79,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(80,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(112,62): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(137,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(149,61): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(250,44): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(270,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(282,57): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(295,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(399,44): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(401,62): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(401,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(410,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(433,57): warning C4018: '<': signed/unsigned mismatch
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(446,92): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(446,72): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(487,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.cpp(487,28): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(66,45): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(75,35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(76,35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(79,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(80,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(112,62): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(137,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(149,61): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(250,44): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(270,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(282,57): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(295,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(399,44): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(401,62): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(401,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(410,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(433,57): warning C4018: '<': signed/unsigned mismatch
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(446,92): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(446,72): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(487,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.cpp(487,28): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244: 'initializing': conversion from 'double' to '_Ty1', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244:         with
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244:         [
@@ -119,13 +119,13 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.3380
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:             _Ty2=int
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         ]
   SupporterFollowState.cpp
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
   SupporterHelpTeammate.cpp
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
   SupporterState.cpp
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
   Team.cpp
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\Supporter.h(37,11): warning C4200: nonstandard extension used: zero-sized array in struct/union
   Generating Code...
-C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Graphics\main.cpp(419,1): warning C4715: 'findSoldier': not all control paths return a value
-  Graphics.vcxproj -> C:\Users\benzo\source\repos\AI\Final Project - AI\Graphics\Dungen_Game-AI\Debug\Graphics.exe
+C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Graphics\main.cpp(419,1): warning C4715: 'findSoldier': not all control paths return a value
+  Graphics.vcxproj -> C:\Users\benzo\source\repos\AI\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Ben_206480774 Guy_318458882_AI_Dungen\Debug\Graphics.exe
